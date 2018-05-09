@@ -1,0 +1,15 @@
+{
+  "id" : "player",
+  "sprite_sheet" : "file.jpg",
+  "specifications" : {
+    "base_stats" : {
+
+    },
+    "actions" : [
+      {
+        "name" : "run",
+        "animation" : {}
+      }
+    ]
+  }
+}

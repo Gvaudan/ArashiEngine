@@ -1,0 +1,12 @@
+//
+// Created by David on 06/05/2018.
+//
+
+#ifndef ARASHIENGINE_ENTITIESMANAGER_HH
+#define ARASHIENGINE_ENTITIESMANAGER_HH
+
+class EntitiesManager {
+
+};
+
+#endif //ARASHIENGINE_ENTITIESMANAGER_HH

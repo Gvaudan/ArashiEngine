@@ -1,0 +1,32 @@
+{
+  "window": {
+    "width": 640,
+    "height": 480,
+    "fullscreen": false
+  },
+  "ressources": {
+    "characters": {
+      "sub_path": "characters",
+      "files": [
+        {
+          "sub_path": "",
+          "file_name": "",
+          "id": ""
+        }
+      ]
+    }
+  },
+  "entities": {
+    "sub_path" : "entities",
+    "characters": [
+      "player"
+    ],
+    "objects": []
+  },
+  "stages" : [
+    {
+      "id" : "base_state",
+      "tilest" : "base_stage_tilset.json"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "columns": 11,
+  "image": "..\/graphics\/tiles\/GrassLand\/Terrain\/Grassland_Terrain_Tileset.png",
+  "imageheight": 128,
+  "imagewidth": 176,
+  "margin": 0,
+  "name": "grassland_tileset",
+  "spacing": 0,
+  "tilecount": 88,
+  "tileheight": 16,
+  "tilewidth": 16,
+  "type": "tileset"
+}

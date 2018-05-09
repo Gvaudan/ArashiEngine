@@ -1,0 +1,8 @@
+//
+// Created by David on 05/05/2018.
+//
+
+#ifndef ARASHIENGINE_MANAGERS_HH
+#define ARASHIENGINE_MANAGERS_HH
+
+#endif //ARASHIENGINE_MANAGERS_HH
