@@ -21,19 +21,19 @@ bool Context::initialize() {
   m_input_manager = InputManager::get_instance();
   m_data_manager = DataManager::get_instance();
   m_data_manager->initialize();
+
+  m_entities_manager = EntitiesManager::get_instance();
+  m_entities_manager->set_stage("grassland");
+
   /*TODO : Creer le context de jeu
    * */
-
   return true;
 }
 void Context::run() {
 
-  StageBuilder::get_instance()->build_stage("grassland");
-
   while (m_window.isOpen()) {
 
-	handle_input();
-	m_event_manager->process_events(m_window);
+	handle_events();
 	update();
 	render();
 
@@ -49,12 +49,12 @@ void Context::exit() {
 void Context::update() {
 
 }
-void Context::handle_input() {
-
+void Context::handle_events() {
+  m_event_manager->process_events(m_window);
 }
 void Context::render() {
   m_window.clear();
-
+  m_entities_manager->draw(m_window, sf::RenderStates::Default);
   m_window.display();
 }
 void Context::load_parameters() {

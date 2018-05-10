@@ -22,7 +22,7 @@ Stage *StageBuilder::build_stage(std::string p_id) {
 
   texture_ptr = GraphicsManager::get_instance()->get_texture(p_id, TextureType::TILESET);
 
-  Stage stage(p_id, stage_definition, tielset_definition, texture_ptr);
+  auto stage = new Stage(p_id, stage_definition, tielset_definition, texture_ptr);
 
-  return nullptr;
+  return stage;
 }

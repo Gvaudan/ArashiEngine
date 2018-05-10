@@ -12,25 +12,30 @@
 #include <rapidjson/document.h>
 
 namespace json = rapidjson;
-
+typedef std::unique_ptr<std::vector<unsigned int>> ptr_data_layer_t;
+typedef std::shared_ptr<sw::TileMap<unsigned int>> ptr_layer_t;
+typedef std::shared_ptr<sf::Texture> ptr_texture_t;
 class Stage : public ISceneNode {
  public:
   Stage();
+  ~Stage() override;
   Stage(std::string p_id,
 		json::Document &stage_definition,
 		json::Document &tileset_definition,
-		std::shared_ptr<sf::Texture> texture);
+		ptr_texture_t texture);
   void update(sf::Time dt) override;
   void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
- private:
 
+ private:
   void build(json::Document stage_definition, json::Document tileset_definition);
 
-  void build_layer(rapidjson::GenericValue<rapidjson::UTF8<char>,
-										   rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>>::ValueIterator);
+  void build_layer(json::GenericValue<json::UTF8<char>,
+									  json::MemoryPoolAllocator<json::CrtAllocator>>::ValueIterator,
+				   sf::Vector2f p_tile_size,
+				   unsigned int p_tile_row);
 
-  std::vector<std::vector<unsigned int>> m_data_layers;
-  std::vector<std::shared_ptr<sw::TileMap<unsigned int>>> m_layers;
+  std::vector<ptr_data_layer_t> m_data_layers;
+  std::vector<ptr_layer_t> m_layers;
   std::shared_ptr<sf::Texture> m_texture;
 };
 

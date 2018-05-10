@@ -7,6 +7,7 @@ include_directories(Projet/Include
     Projet/souces/Engine/Command/
     Projet/souces/Engine/Debug/
     Projet/souces/Engine/Entities/
+    Projet/souces/Engine/Events/
     Projet/souces/Engine/Managers/
     Projet/souces/Engine/GameContext/
     Projet/souces/Engine/Logic/

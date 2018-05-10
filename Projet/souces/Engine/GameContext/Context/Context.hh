@@ -7,9 +7,10 @@
 
 #include <Templates/TemplateSingleton.hh>
 
-#include "EventManager.hh"
+#include "../../Events/EventManager.hh"
 #include "InputManager.hh"
 #include "Data/DataManager.hh"
+#include "EntitiesManager.hh"
 
 #include "IStateMachine.hh"
 #include "defs.h"
@@ -28,7 +29,7 @@ class Context : public IStateMachine,
   void exit();
  private:
   void update();
-  void handle_input();
+  void handle_events();
   void render();
 
   void load_parameters();
@@ -37,6 +38,7 @@ class Context : public IStateMachine,
   sf::RenderWindow m_window;
   pt::ptree m_contex_config;
 
+  EntitiesManager* m_entities_manager;
   EventManager *m_event_manager;
   InputManager *m_input_manager;
   DataManager *m_data_manager;
