@@ -59,7 +59,6 @@ void ISceneNode::update_child(sf::Time dt) {
 }
 
 void ISceneNode::draw_current(sf::RenderTarget &target, sf::RenderStates states) const {
-
 }
 
 void ISceneNode::draw_children(sf::RenderTarget &target, sf::RenderStates states) const {

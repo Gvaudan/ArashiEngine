@@ -1,14 +1,71 @@
 {
-  "id" : "player",
-  "sprite_sheet" : "file.jpg",
-  "specifications" : {
-    "base_stats" : {
-
+  "id": "player",
+  "sprite_sheet": "valiant_knight",
+  "specifications": {
+    "base_stats": {
     },
-    "actions" : [
+    "animations": [
+      "idle",
+      "attack",
+      "jump_start",
+      "jump_end",
+      "jump_loop",
+      "fall_loop",
+      "guard",
+      "guard_end",
+      "guard_start",
+      "run"
+    ],
+    "states": [
       {
-        "name" : "run",
-        "animation" : {}
+        "id": "neutral",
+        "animations": [
+          "idle"
+        ],
+        "actions": [
+          "run",
+          "jump"
+        ]
+      },
+      {
+        "id": "onJump",
+        "animations": [
+          "jump_start",
+          "jump_loop",
+          "jump_end"
+        ],
+        "actions": []
+      },
+      {
+        "id": "onRun",
+        "animations": [
+          "run"
+        ],
+        "actions": [
+          "jump"
+        ]
+      },
+      {
+        "id": "onAttack",
+        "animations": [
+          "attack"
+        ],
+        "actions": [
+          "run",
+          "jump"
+        ]
+      },
+      {
+        "id": "onGuard",
+        "animations": [
+          "guard_start",
+          "guard",
+          "guard_end"
+        ],
+        "actions": [
+          "attack",
+          "idle"
+        ]
       }
     ]
   }

@@ -23,6 +23,8 @@ bool Context::initialize() {
   m_data_manager->initialize();
 
   m_entities_manager = EntitiesManager::get_instance();
+  m_entities_manager->initialize();
+  m_entities_manager->initialize_player();
   m_entities_manager->set_stage("grassland");
 
   /*TODO : Creer le context de jeu

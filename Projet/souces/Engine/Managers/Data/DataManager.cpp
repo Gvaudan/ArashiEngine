@@ -17,11 +17,14 @@ std::shared_ptr<rapidjson::Document> DataManager::get_property(std::string p_id,
 	case PropertyType::SETTING_DEF : break;
 	case PropertyType::STAGE_DEF :path.append(FOLDER_STAGES).append(property_name);
 	  break;
-	case PropertyType::TILESET_DEF :
-	  p_id.append("_tileset");
+	case PropertyType::TILESET_DEF : p_id.append("_tileset");
 	  path.append(FOLDER_STAGES).append(property_name);
 	  break;
+	case PropertyType::SPRITESHEET_DEF : path.append(FOLDER_TEXTURE).append("sprites/").append(property_name);
+	  break;
 	case PropertyType::ENTITIE_DEF : break;
+	case PropertyType::CHARACTER_DEF : path.append(FOLDER_ENTITIES).append("characters/").append(property_name);
+	  break;
 	case PropertyType::MENU_DEF : break;
 	default: break;
   }

@@ -6,8 +6,15 @@
 #include <StageBuilder.hh>
 #include <memory>
 #include <utility>
-void EntitiesManager::initialize_player() {
 
+void EntitiesManager::initialize() {
+  m_entities_factory = EntityFactory::get_instance();
+  m_entities_factory->register_type(Entities::Type::PLAYER, new PlayerCreator());
+  m_player.reset((Player*)m_entities_factory->create(Entities::Type::PLAYER));
+}
+
+void EntitiesManager::initialize_player() {
+  m_player.reset((Player*)m_entities_factory->create(Entities::Type::PLAYER));
 }
 void EntitiesManager::update(sf::Time dt) {
   update_player(dt);

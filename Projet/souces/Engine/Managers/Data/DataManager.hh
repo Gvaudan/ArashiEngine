@@ -25,6 +25,8 @@ namespace Ostreams = boost::iostreams;
 
 typedef enum property_type_t {
   ENTITIE_DEF,
+  CHARACTER_DEF,
+  SPRITESHEET_DEF,
   STAGE_DEF,
   TILESET_DEF,
   MENU_DEF,

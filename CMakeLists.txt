@@ -19,7 +19,10 @@ file(GLOB sources_files
         Projet/souces/*/*.cpp
         Projet/souces/*/*/*.cpp
         Projet/souces/*/*/*/*.cpp
-        Projet/souces/*/*/*/*/*.cpp)
+        Projet/souces/*/*/*/*.cpp
+        Projet/souces/*/*/*/*/*.cpp
+        Projet/souces/*/*/*/*/*/*.cpp
+        Projet/souces/*/*/*/*/*/*/*.cpp)
 
 #message(STATUS "Loaded sources files : ${sources_files}")
 add_executable(ArashiEngine ${sources_files})
@@ -49,7 +52,7 @@ set(Boost_LIBRARY_DIRS "C:/DEV/Boost/boost_1_67_0/lib")
 set(Boost_USE_STATIC_LIBS        ON) # only find static libs
 set(Boost_USE_MULTITHREADED      ON)
 set(Boost_USE_STATIC_RUNTIME    OFF)
-find_package(Boost 1.67.0 COMPONENTS date_time filesystem system log iostreams)
+find_package(Boost 1.67.0 COMPONENTS date_time filesystem system log iostreams regex)
 
 if(Boost_FOUND)
     message(STATUS "Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")

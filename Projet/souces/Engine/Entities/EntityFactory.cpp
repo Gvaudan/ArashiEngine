@@ -22,6 +22,7 @@ IEntity *EntityFactory::create(Entities::Type type) {
 	  BOOST_LOG_TRIVIAL(warning) << __PRETTY_FUNCTION__ << "Try to create an unregistered entitie";
 	  return nullptr;
 	}
+	//TODO : Injecter directement les informations de construction
 	return m_creators[type]->create();
   }
   return nullptr;

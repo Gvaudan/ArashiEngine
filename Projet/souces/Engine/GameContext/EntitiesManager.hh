@@ -13,6 +13,7 @@
 
 class EntitiesManager : public TemplateSingleton<EntitiesManager> {
  public:
+  void initialize();
   void initialize_player();
 
   void update(sf::Time dt);
@@ -35,6 +36,8 @@ class EntitiesManager : public TemplateSingleton<EntitiesManager> {
   std::unique_ptr<Player> m_player;
   std::map<std::string, IEntity> m_entities;
   std::unique_ptr<Stage> m_stage;
+
+  EntityFactory *m_entities_factory;
 };
 
 #endif //ARASHIENGINE_ENTITIESMANAGER_HH

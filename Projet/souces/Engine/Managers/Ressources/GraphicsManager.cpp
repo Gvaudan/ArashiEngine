@@ -19,6 +19,8 @@ std::shared_ptr<sf::Texture> GraphicsManager::get_texture(std::string p_id, Text
   switch (p_type) {
 	case TextureType::TILESET: file_name = std::string(FOLDER_TEXTURE).append("tiles/").append(p_id).append(".png");
 	  break;
+	case TextureType::SPRITESHEET : file_name = std::string(FOLDER_TEXTURE).append("sprites/").append(p_id).append(".png");
+	  break;
 	default: break;
   }
   BOOST_LOG_TRIVIAL(info) << "Try to open : " << file_name;
